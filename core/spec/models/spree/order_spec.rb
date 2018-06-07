@@ -310,6 +310,11 @@ describe Spree::Order do
         expect(order.completed_at).to be_present
       end
     end
+
+    it 'calls updater#before_save' do
+      order.updater.should_receive(:before_save_hook)
+      order.finalize!
+    end
   end
 
   context "#process_payments!" do

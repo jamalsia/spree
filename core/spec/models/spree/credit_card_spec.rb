@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Spree::CreditCard do
   let(:valid_credit_card_attributes) do
-    { :number => '4111111111111111',
-      :verification_value => '123',
-      :expiry => "12 / 14",
-      :name => "Spree Commerce" }
+    { number: '4111111111111111',
+      verification_value: '123',
+      expiry: "12 / 24",
+      name: "Spree Commerce" }
   end
 
   def self.payment_states

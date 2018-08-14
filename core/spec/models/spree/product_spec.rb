@@ -220,6 +220,23 @@ describe Spree::Product do
         product.stock_items.first.should_not be_nil
       end
     end
+
+    it "supports Chinese" do
+      create(:product, :name => "你好").permalink.should == "ni-hao"
+    end
+
+    context "manual permalink override" do
+      let(:product) { create(:product, :name => "foo") }
+
+      it "calling save_permalink with a parameter" do
+        product.name = "foobar"
+        product.save
+        product.permalink.should == "foo"
+
+        product.save_permalink(product.name)
+        product.permalink.should == "foobar"
+      end
+    end
   end
 
   context "properties" do

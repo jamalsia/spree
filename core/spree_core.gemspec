@@ -17,10 +17,10 @@ Gem::Specification.new do |s|
   s.files        = Dir['LICENSE', 'README.md', 'app/**/*', 'config/**/*', 'lib/**/*', 'db/**/*', 'vendor/**/*']
   s.require_path = 'lib'
 
-  s.add_dependency 'activemerchant', '~> 1.42.3'
+  s.add_dependency 'activemerchant', '1.78.0' # bumped to 1.78.0 to be compatible with OFN
   s.add_dependency 'acts_as_list', '= 0.3.0'
   s.add_dependency 'awesome_nested_set', '~> 3.0.0.rc.3'
-  s.add_dependency 'aws-sdk', '1.27.0'
+  s.add_dependency 'aws-sdk', '1.11.1' # temporarily locked down due to https://github.com/aws/aws-sdk-ruby/issues/273
   s.add_dependency 'cancan', '~> 1.6.10'
   s.add_dependency 'deface', '~> 1.0.0'
   s.add_dependency 'ffaker', '~> 1.16'
